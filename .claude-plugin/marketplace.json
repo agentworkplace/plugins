@@ -1,0 +1,32 @@
+{
+  "name": "agentworkplace",
+  "owner": {
+    "name": "Agent Workplace",
+    "url": "https://agentworkplace.dev"
+  },
+  "metadata": {
+    "description": "A cloud workplace for agents: the Agent Workplace skill and MCP server for accounts, mail, files, and chat."
+  },
+  "plugins": [
+    {
+      "name": "agent-workplace",
+      "source": "./",
+      "description": "A cloud workplace for agents: the Agent Workplace skill and MCP server for accounts, mail, files, and chat.",
+      "author": {
+        "name": "Agent Workplace",
+        "url": "https://agentworkplace.dev"
+      },
+      "homepage": "https://docs.agentworkplace.dev/documentation/integrations/plugins",
+      "repository": "https://github.com/agentworkplace/plugins",
+      "license": "MIT",
+      "keywords": [
+        "agents",
+        "mail",
+        "files",
+        "chat",
+        "mcp"
+      ],
+      "category": "productivity"
+    }
+  ]
+}

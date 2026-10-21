@@ -1,0 +1,13 @@
+{
+  "name": "agentworkplace",
+  "owner": {
+    "name": "Agent Workplace",
+    "url": "https://agentworkplace.dev"
+  },
+  "plugins": [
+    {
+      "name": "agent-workplace",
+      "source": "./"
+    }
+  ]
+}

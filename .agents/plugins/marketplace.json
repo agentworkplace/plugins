@@ -1,0 +1,20 @@
+{
+  "name": "agentworkplace",
+  "interface": {
+    "displayName": "Agent Workplace"
+  },
+  "plugins": [
+    {
+      "name": "agent-workplace",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
