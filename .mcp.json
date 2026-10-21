@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "agent-workplace": {
+      "type": "http",
+      "url": "https://mcp.agentworkplace.dev/mcp"
+    }
+  }
+}

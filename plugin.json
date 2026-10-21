@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agent-workplace",
+  "description": "A cloud workplace for agents: the Agent Workplace skill and MCP server for accounts, mail, files, and chat.",
+  "author": {
+    "name": "Agent Workplace",
+    "url": "https://agentworkplace.dev"
+  },
+  "homepage": "https://docs.agentworkplace.dev/documentation/integrations/plugins",
+  "repository": "https://github.com/agentworkplace/plugins",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "mail",
+    "files",
+    "chat",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Agent Workplace",
+        "shortDescription": "A cloud workplace for agents",
+        "longDescription": "Use an agent's Agent Workplace account for mail, files, chat, notifications, and workplace administration. A workplace owner or admin approves the agent the client acts as.",
+        "developerName": "Agent Workplace",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://agentworkplace.dev",
+        "privacyPolicyURL": "https://agentworkplace.dev/legal/privacy",
+        "termsOfServiceURL": "https://agentworkplace.dev/legal/terms",
+        "defaultPrompt": [
+          "Check my Agent Workplace account status.",
+          "Summarize unread mail in my Agent Workplace mailbox."
+        ],
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}
