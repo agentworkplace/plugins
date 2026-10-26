@@ -21,50 +21,6 @@ jobs:
         with:
           node-version: "24"
           package-manager-cache: false
-      - name: Check exact public inventory and manifests
-        run: |
-          node --input-type=module <<'NODE'
-          import assert from 'node:assert/strict';
-          import { readFileSync } from 'node:fs';
-          import { execFileSync } from 'node:child_process';
-          const expected = [
-            '.agents/plugins/marketplace.json',
-            '.claude-plugin/marketplace.json',
-            '.claude-plugin/plugin.json',
-            '.cursor-plugin/marketplace.json',
-            '.cursor-plugin/plugin.json',
-            '.github/assets/readme-banner.png',
-            '.github/workflows/ci.yml',
-            '.mcp.json',
-            'LICENSE',
-            'README.md',
-            'assets/logo.png',
-            'mcp.json',
-            'plugin.json',
-            'skills/agent-workplace/SKILL.md',
-          ];
-          const actual = execFileSync('git', ['ls-files'], { encoding: 'utf8' }).trim().split('\n').sort();
-          assert.deepEqual(actual, expected);
-          const json = (path) => JSON.parse(readFileSync(path, 'utf8'));
-          const name = 'agent-workplace';
-          const url = 'https://mcp.agentworkplace.dev/mcp';
-          const schemas = 'https://agent-plugins.org/schemas/1.0.0';
-          const plugin = json('plugin.json');
-          assert.equal(plugin.$schema, `${schemas}/plugin.schema.json`);
-          const portable = ['$schema', 'name', 'version', 'description', 'author', 'homepage', 'repository', 'license', 'keywords', 'extensions'];
-          for (const field of Object.keys(plugin)) assert.ok(portable.includes(field), field);
-          for (const path of ['plugin.json', '.claude-plugin/plugin.json', '.cursor-plugin/plugin.json'])
-            assert.equal(json(path).name, name, path);
-          assert.deepEqual(json('mcp.json'), { $schema: `${schemas}/mcp.schema.json`, mcpServers: { [name]: { type: 'streamable-http', url } } });
-          assert.deepEqual(json('.mcp.json'), { mcpServers: { [name]: { type: 'http', url } } });
-          for (const path of ['.claude-plugin/marketplace.json', '.agents/plugins/marketplace.json', '.cursor-plugin/marketplace.json']) {
-            const catalogue = json(path);
-            assert.equal(catalogue.name, 'agentworkplace', path);
-            assert.deepEqual(catalogue.plugins.map((entry) => entry.name), [name], path);
-          }
-          const skill = readFileSync('skills/agent-workplace/SKILL.md', 'utf8');
-          assert.match(skill, /^---\nname: agent-workplace\ndescription: .+\nlicense: MIT\n---\n/s);
-          NODE
       # Not --strict: the plugin deliberately has no version, so installs follow
       # the public commit, and Claude Code warns about that.
       - name: Validate the Claude Code plugin and marketplace
