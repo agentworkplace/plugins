@@ -16,7 +16,7 @@
         "name": "Agent Workplace",
         "url": "https://agentworkplace.dev"
       },
-      "homepage": "https://docs.agentworkplace.dev/documentation/integrations/plugins",
+      "homepage": "https://docs.agentworkplace.dev/documentation/agents",
       "repository": "https://github.com/agentworkplace/plugins",
       "license": "MIT",
       "keywords": [
