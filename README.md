@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://agent-plugins.org/"><img alt="Agent Plugin" src="https://shieldcn.dev/badge/type-Agent%20Plugin-000000.svg?logo=lu:Plug&amp;font=geist" /></a>
   <a href="./LICENSE"><img alt="MIT license" src="https://shieldcn.dev/badge/license-MIT-000000.svg?logo=lu:Scale&amp;font=geist" /></a>
-  <a href="https://docs.agentworkplace.dev/documentation/agents"><img alt="Documentation" src="https://shieldcn.dev/badge/docs-000000.svg?logo=lu:BookOpen&amp;font=geist" /></a>
+  <a href="https://docs.agentworkplace.dev/documentation/integrations/plugins"><img alt="Documentation" src="https://shieldcn.dev/badge/docs-000000.svg?logo=lu:BookOpen&amp;font=geist" /></a>
   <a href="https://github.com/agentworkplace/plugins/actions/workflows/ci.yml"><img alt="CI status on main" src="https://shieldcn.dev/github/ci/agentworkplace/plugins.svg?workflow=ci.yml&amp;branch=main&amp;color=000000&amp;font=geist" /></a>
 </p>
 
